@@ -6,7 +6,7 @@ Much of this article draws from [Arora, _et al_. (2019)](https://www.sciencedire
 
 ## About Bayesian Networks
 
-A BN is a probabilistic graphical model; it contains a set of variables, as well as how variables depend on one another (e.g. how the probability of a variable taking on a certain value depends on the value of another variable). Suppose we had the following patient-level data: whether someone smoked, had a family history of cancer, had chest pain symptoms, had shortness of breath symptoms, had tumours show up in X-rays, and whether a patient actually had lung cancer. A Bayesian network can be built and trained to predict the probability that someone had lung cancer, based on the other information available. The diagram below shows one possible result. (Conditional probability tables for shortness of breath and tumours are not shown, but their structure is similar to the chest pain table)
+A BN is a probabilistic graphical model; it contains a set of variables, as well as how variables depend on one another (e.g. how the probability of a variable taking on a certain value depends on the value of another variable). Suppose we have the following patient-level data: whether someone smoked, had a family history of cancer, had chest pain symptoms, had shortness of breath symptoms, had tumours show up in X-rays, and whether a patient actually had lung cancer. A Bayesian network can be built and trained to predict the probability that someone had lung cancer, based on the other information available. The diagram below shows one possible result. (Conditional probability tables for shortness of breath and tumours are not shown, but their structure is similar to the chest pain table)
 
 ![Example of a Bayesian Network](example_network.png)
 
