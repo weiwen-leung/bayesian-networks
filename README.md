@@ -2,7 +2,7 @@
 
 How can Bayesian networks be used in public health? One use case is to predict the risk that someone has a disease. This article explains Bayesian networks (BNs), and then illustrates how BNs can be used to predict coronary artery disease (CAD) risk.
 
-Much of this article draws from [Arora et al. (2019)](https://www.sciencedirect.com/science/article/pii/S1098301519300579) and [Gupta et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31619130/). All errors are mine.
+Much of this article draws from [Arora, _et al_. (2019)](https://www.sciencedirect.com/science/article/pii/S1098301519300579) and [Gupta, _et al_. (2019)](https://pubmed.ncbi.nlm.nih.gov/31619130/). All errors are mine.
 
 ## About Bayesian Networks
 
@@ -38,11 +38,11 @@ Also, as Bayesian networks are less complex than many state-of-the-art machine l
 
 ## Example: Predicting coronary artery disease risk
 
-[Gupta et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31619130/) illustrate how a BN can be used to predict coronary artery disease (CAD) risk. They trained a BN on a data from 300 Iranian patients, which contained patient demographics, symptoms, ECG results, biomarkers, and CAD indicators.
+[Gupta, _et al_. (2019)](https://pubmed.ncbi.nlm.nih.gov/31619130/) illustrate how a BN can be used to predict coronary artery disease (CAD) risk. They trained a BN on a data from 300 Iranian patients, which contained patient demographics, symptoms, ECG results, biomarkers, and CAD indicators.
 
 They first discretized the data (by converting continuous variables into discrete ones), by using cutoff values where available (e.g. the abnormal/normal cutoff level), and binning the data when not. Discretizing the data allowed them to create a discrete BN; discrete BNs are more easily interpreted by non-experts, and impose weaker assumptions on the data.
 
-They then estimated graph structure using a penalized maximum likelihood estimator. Roughly speaking, such an estimator tries to find the model with the greatest likelihood of producing the observed data (with an adjustment that typically favors simpler models over more complex ones). They used this estimator 10000 times, each time using a bootstrapped dataset (a dataset obtained by sampling with replacement from the original dataset), and averaged all results. They also made sure that there were no links to age and sex from other variables. Parameters were then estimated using a Bayesian estimator with a Dirichlet prior.
+They then estimated graph structure using a penalized maximum likelihood estimator. Roughly speaking, such an estimator tries to find the model with the greatest likelihood of producing the observed data (with an adjustment that typically favors simpler models over more complex ones). They used this estimator 10,000 times, each time using a bootstrapped dataset (a dataset obtained by sampling with replacement from the original dataset), and averaged all results. They also made sure that there were no links to age and sex from other variables. Parameters were then estimated using a Bayesian estimator with a Dirichlet prior.
 
 They then trained some machine learning models (e.g. support vector machines, neural networks, and logistic regression) on the data, allowing them to see how BN fared relative to those models. BN's performance was on par with these models based on the AUC (area under the curve) accuracy metric: BN's AUC was 0.93, while the machine learning models had AUCs between 0.91 and 0.92. In this analysis, a model's AUC is the likelihood that a randomly selected patient with CAD would have a higher predicted probability of having CAD, compared to a randomly selected patient without CAD. Higher AUC scores are more desirable than lower AUC scores.
 
